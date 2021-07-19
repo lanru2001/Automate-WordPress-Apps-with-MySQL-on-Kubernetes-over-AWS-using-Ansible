@@ -1,13 +1,13 @@
 
-Automate Kubernetes Cluster Using Ansible.
+Automate Kubernetes Cluster Using Terraform.
 
 Launch EC2-instances on AWS Cloud for master and slave.
 
 Create roles that will configure master node and slave node separately.
 
-Launch a WordPress and MySQL database connected to it in the respective slaves.
+Launch a WordPress and MySQL database connect to it in the respective slaves.
 
-Expose the WordPress pod and client able hit the WordPress IP with its respective port.
+Expose the WordPress pod and client to hit the WordPress IP with its respective port.
 
 Create a dynamic inventory:
 - Installing Python3: $ yum install python3 -y

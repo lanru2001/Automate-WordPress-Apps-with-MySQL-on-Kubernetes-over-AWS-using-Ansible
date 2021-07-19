@@ -1,0 +1,4 @@
+- name: Adding Kubeadm repo
+   copy:
+            src: kubernetes.repo
+            dest: /etc/yum.repos.d

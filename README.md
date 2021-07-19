@@ -19,5 +19,9 @@ Create a dynamic inventory:
  Open /etc/ansible/ansible.cfg and find the [inventory] section and add the following line to enable the ec2 plugin:
  [inventory]
  enable_plugins = aws_ec2 
-
+ 
+ Test the dynamic inventory configuration by listing the EC2 instances:
+ ansible-inventory -i /opt/ansible/inventory/aws_ec2.yaml --list 
+ # The above command returns the list of EC2 instances with all its parameters in JSON format
+ 
 ![image](https://user-images.githubusercontent.com/59709429/126087732-47ebb544-0244-4326-bd75-c30f55ed6503.png)

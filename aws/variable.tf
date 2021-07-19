@@ -274,6 +274,11 @@ variable "instance_tag" {
   default = ""
 }
 
+variable deploy_name {}
+variable deploy_label {}
+variable pod_replicas {type = number}
+variable pod_label {}
+variable pod_img {}
 
 locals {
  

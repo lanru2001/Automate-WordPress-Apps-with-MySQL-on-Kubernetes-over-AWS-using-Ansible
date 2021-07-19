@@ -1,8 +1,7 @@
 # Security group 
-resource "aws_security_group" "app_security_group" {
+resource "aws_security_group" "eks_security_group" {
   name                      = "${local.module_prefix}-sg"
-  description               = "Allow traffic for instances"
-  vpc_id                    = aws_vpc.app_vpc.id
+  vpc_id                    = aws_vpc.eks_vpc.id
 
   ingress {
     from_port   = 22
@@ -32,10 +31,31 @@ resource "aws_security_group" "app_security_group" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  ingress {
+   ingress {
     protocol    = "tcp"
     from_port   = 3000
     to_port     = 3000
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  
+   ingress {
+    protocol    = "tcp"
+    from_port   = 3306
+    to_port     = 3306
+    cidr_blocks = ["0.0.0.0/0"]
+  }  
+  
+    ingress {
+    protocol    = "udp"
+    from_port   = 53
+    to_port     = 53
+    cidr_blocks = ["0.0.0.0/0"]
+  }  
+
+    ingress {
+    from_port   = 0
+    to_port     = 0
+    protocol    =  -1
     cidr_blocks = ["0.0.0.0/0"]
   }
 
@@ -47,6 +67,7 @@ resource "aws_security_group" "app_security_group" {
   }
 
   depends_on = [
-      aws_vpc.app_vpc   
+      aws_vpc.eks_vpc   
   ]
 }
+  

@@ -1,7 +1,7 @@
 
 Automate Kubernetes Cluster Using Terraform.
 
-Launch EC2-instances on AWS Cloud for master and slave.
+Launch EC2-instances on AWS Cloud for master and slave(s).
 
 Create roles that will configure master node and slave node separately.
 

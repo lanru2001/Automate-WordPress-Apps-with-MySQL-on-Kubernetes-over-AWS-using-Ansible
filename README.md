@@ -15,5 +15,9 @@ Create a dynamic inventory:
 - Creating a inventory directory: 
   mkdir -p /opt/ansible/inventory
   cd /opt/ansible/inventory
+  
+ Open /etc/ansible/ansible.cfg and find the [inventory] section and add the following line to enable the ec2 plugin:
+ [inventory]
+ enable_plugins = aws_ec2 
 
 ![image](https://user-images.githubusercontent.com/59709429/126087732-47ebb544-0244-4326-bd75-c30f55ed6503.png)
